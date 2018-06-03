@@ -5,8 +5,9 @@ void    print_upper_case(char *str) {
 
     i = -1;
     while (str[++i]) {
-        std::cout << toupper(str[i]);
+        str[i] = toupper(str[i]);
     }
+    std::cout << str;
 }
 
 int     main(int ac, char **av) {
@@ -19,8 +20,6 @@ int     main(int ac, char **av) {
     i = 0;
     while (++i < ac) {
         print_upper_case(av[i]);
-        if (av[i + 1])
-            std::cout << " ";
     }
     std::cout << std::endl;
 }
