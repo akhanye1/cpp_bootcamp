@@ -4,6 +4,8 @@
 #include <iostream>
 
 class phonebook {
+	static int	items;
+
     private:
     std::string first_name;
     std::string last_name;
@@ -17,8 +19,6 @@ class phonebook {
     std::string underwear_color;
     std::string darkest_secret;
 
-    public:
-    static int  items;
 };
 
 #endif
