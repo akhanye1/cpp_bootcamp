@@ -1,10 +1,10 @@
 NAME = phonebook
 
-CLANG = g++
+CLANG = clang++
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC = phonebook.cpp
+SRC = phonebook.class.cpp main.cpp
 
 all: $(NAME)
 

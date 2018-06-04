@@ -12,29 +12,35 @@
 
 #include <iostream>
 #include <string>
-#include "phonebook.hpp"
+#include "phonebook.class.hpp"
 
-void    add_contact(phonebook contacts) {
-    if (contacts::items == 0) {
-        std::cout << "Phonebook is empty" << std::endl;
-    }
+Phonebook::Phonebook(void) {
+	std::cout << "Constructor Called"	 << std::endl;
 }
 
-int     main(void) {
-    std::string command;
-    bool        exit_function;
-    phonebook   contacts[8];
-
-    command = "start";
-    contacts::items = 0;
-    exit_function = false;
-    while (!exit_function) {
-        std::cout << "phonebook>";
-        std::getline(std::cin, command);
-        if (command.compare("EXIT") == 0)
-            exit_function = true;
-        else if (command.compare("ADD") == 0)
-            add_contact(contacts)
-        std::cout << std::endl;
-    }
+void	Phonebook::printContact(void) const {
+	std::cout << "Printing empty values" << std::endl;
 }
+
+int	Phonebook::getCounter(void) {
+		return Phonebook::_counter;
+}
+
+void	Phonebook::setFirstName(std::String firstName) {
+		this->_first_name = firstName;
+}
+
+void	Phonebook::setLastName(std::String lastName) {
+		this->_last_name = lastName;
+}
+
+void	Phonebook::setNickname(std::String nickName) {
+		this->_nickname = nickName;
+}
+
+void	Phonebook::setLastName(std::String lastName) {
+		this->_last_name = lastName;
+}
+
+
+int	Phonebook::_counter = 0;
