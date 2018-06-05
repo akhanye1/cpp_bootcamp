@@ -5,12 +5,12 @@ bool	isDigits(std::string str) {
 	int	sz;
 
 	sz = str.size();
-	if (size < 1) {
+	if (sz < 1) {
 		return (false);
 	}
 	i = -1;
 	while (++i < sz) {
-		if (!std.isdigit(str[i]))
+		if (!std::isdigit(str[i]))
 			return (false);
 	}
 	return (true);
@@ -33,7 +33,7 @@ void	viewAllContacts(Phonebook phonebook[]) {
 		viewAllContacts(phonebook);
 		return ;
 	}
-	index = atoi(num);
+	index = std::stoi(num);
 	if (index > 7) {
 		std::cout << "INVALID CHOICE (PLEASE TRY AGAIN)" << std::endl;
 		viewAllContacts(phonebook);

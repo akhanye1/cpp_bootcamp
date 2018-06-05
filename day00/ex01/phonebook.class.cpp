@@ -76,22 +76,28 @@ void		Phonebook::viewContact(int i) const {
 	std::cout << std::setw(10);
 	std::cout << i;
 	std::cout << " | ";
-	// std::cout << std::setw(10);
-	// std::cout << this->_first_name;
 	this->_truncate(this->_first_name);
 	std::cout << " | ";
-	// std::cout << std::setw(10);
-	// std::cout << this->_last_name;
 	this->_truncate(this->_last_name);
 	std::cout << " | ";
-	// std::cout << std::setw(10);
-	// std::cout << this->_nickname;
 	this->_truncate(this->_nickname);
 	std::cout << std::endl;
 }
 
 
 void		Phonebook::showDetails(void) const {
-	
+	std::cout << "CONTACT" << std::endl;
+	std::cout << std::endl;
+	std::cout << "First Name : " << this->_first_name << std::endl;
+	std::cout << "Last Name : " << this->_last_name << std::endl;
+	std::cout << "Nickname : " << this->_nickname << std::endl;
+	std::cout << "Login : " << this->_login << std::endl;
+	std::cout << "Postal : " << this->_postal << std::endl;
+	std::cout << "Email : " << this->_email << std::endl;
+	std::cout << "Phone : " << this->_phone << std::endl;
+	std::cout << "Birthdate : " << this->_birthdate << std::endl;
+	std::cout << "Favourite Meal : " << this->_fav_meal << std::endl;
+	std::cout << "Underwear Colour : " << this->_underwear_color << std::endl;
+	std::cout << "Darkest Secret : " << this->_darkest_secret << std::endl;
 }
 int			Phonebook::_counter = 0;
