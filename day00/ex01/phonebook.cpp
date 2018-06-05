@@ -2,8 +2,10 @@
 #include <string>
 #include "phonebook.hpp"
 
-void    add_contact(phonebook contacts) {
-    if (contacts::items == 0) {
+int phonebook::items = 0;
+
+void    add_contact(phonebook *contacts) {
+    if (phonebook::items == 0) {
         std::cout << "Phonebook is empty" << std::endl;;
     }
 }
@@ -14,7 +16,6 @@ int     main(void) {
     phonebook   contacts[8];
 
     command = "start";
-    contacts::items = 0;
     exit_function = false;
     while (!exit_function) {
         std::cout << "phonebook>";
@@ -22,7 +23,7 @@ int     main(void) {
         if (command.compare("EXIT") == 0)
             exit_function = true;
         else if (command.compare("ADD") == 0)
-            add_contact(contacts)
+            add_contact(contacts);
         std::cout << std::endl;
     }
 }

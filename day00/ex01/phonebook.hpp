@@ -19,6 +19,7 @@ class phonebook {
 
     public:
     static int  items;
+    void        add_first_name(std::string fist);
 };
 
 #endif
