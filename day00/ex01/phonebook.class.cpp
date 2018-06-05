@@ -18,13 +18,36 @@
 Phonebook::Phonebook(void) {
 }
 
-// void	Phonebook::viewContacts(void) const {
-// 	std::cout << "Printing empty values" << std::endl;
-// }
-
 
 int		Phonebook::getCounter(void) {
 		return Phonebook::_counter;
+}
+
+bool	Phonebook::_numbeOk(std::string phone) {
+	if (phone.size() != 10) {
+		std::cout << "" << std::endl;
+		return (false);
+	}
+	for (int i = 0; i < 10; i++) {
+		if (!std::isdigit(phone[i]))
+			return (false);
+	}
+	return (true);
+}
+
+void	Phonebook::_setPhone(std::string field, std::string err,
+			std::string place, std::string *value) {
+	int	i;
+
+	i = 0;
+	do {
+		if (i == 1) {
+			std::cout << err << std::endl;
+		}
+		std::cout << field << " (" << place << ") : ";
+		std::cin >> *value;
+		i = 1;
+	} while (!this->_numbeOk(*value));
 }
 
 void	Phonebook::_setName(std::string field, std::string *value) {
@@ -45,7 +68,9 @@ void	Phonebook::addContact(void) {
 	this->_setName("Login", &this->_login);
 	this->_setName("Postal", &this->_postal);
 	this->_setName("Email", &this->_email);
-	this->_setName("Phone", &this->_phone);
+	// this->_setName("Phone", &this->_phone);
+	this->_setPhone("Phone (10 digits)", "Phone number invalid (please try again)",
+					"e.g 1234567890", &this->_phone);
 	this->_setName("Birthdate", &this->_birthdate);
 	this->_setName("Favourite meal", &this->_fav_meal);
 	this->_setName("Underwear Colour", &this->_underwear_color);
